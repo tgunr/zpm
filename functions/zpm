@@ -6,6 +6,12 @@ if [[ "$1" == 'load' ]]; then
   return 0
 fi
 
+if [[ "$1" == 'list' ]]; then
+    shift
+    source $_ZPM_DIR/functions/@zpm-list-plugins "$@"
+    return 0
+fi
+
 if [[ "$1" == 'if' ]]; then
   if check-if "$2"; then
     shift 2

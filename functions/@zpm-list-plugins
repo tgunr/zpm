@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+typeset -a _Plugins_Upgrade=($@)
+typeset -a _Plugins_Upgrade_full=()
+
+if [[ -z $@ ]]; then
+  _Plugins_Upgrade=("${(k)_ZPM_plugins_full[@]}")
+fi
+
+for plugin in $_Plugins_Upgrade; do
+  _Plugins_Upgrade_full+=($_ZPM_plugins_full[$plugin])
+done
+
+@zpm-launch-plugin-helper list "${_Plugins_Upgrade_full[@]}"
+
+# @zpm-clean

@@ -1,4 +1,6 @@
 #!/usr/bin/env zsh
 
 rm -rf "${ZSH_CACHE_DIR}" 2>/dev/null
+rm -f $HOME/.*.zwc
+/usr/bin/find $HOME/.startup -iname "*.zwc" -delete
 exec zsh

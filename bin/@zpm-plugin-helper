@@ -35,6 +35,10 @@ function _msg() {
       color="${c[red]}"
       symbol='✖'
     fi
+  elif [[ "$Command" == "list" ]]; then
+      msg="List"
+      color="${c[green]}"
+      symbol='✔'
   fi
 
   echo "${color}${c[bold]}${msg}${c[reset]} ${Plugin_documentation_hyperlink} ${color}${symbol}${c[reset]}"
@@ -87,7 +91,9 @@ local Plugin_destination_path=$(@zpm-get-plugin-destination-path "$Plugin" "$Plu
 if [[ "$Command" == "upgrade" ]]; then
   @zpm-log zpm:upgrade "Upgrade '${Plugin}'"
 elif [[ "$Command" == "install" ]]; then
-  @zpm-log zpm:install "Install '${Plugin}'"
+    @zpm-log zpm:install "Install '${Plugin}'"
+elif [[ "$Command" == "list" ]]; then
+    @zpm-log zpm:list "List '${Plugin}'"
 else
   echo Unknown command
 fi
