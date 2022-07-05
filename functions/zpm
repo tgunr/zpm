@@ -39,5 +39,5 @@ if is-callable "zpm-$1"; then
   return 0
 fi
 
-echo 'Unknown command `zpm '"$@"'`, treat as `zpm load '"$@"'`'
-@zpm-load-plugins "$@"
+echo 'Unknown command `zpm '"$@"'`'
+# @zpm-load-plugins "$@"
