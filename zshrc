@@ -19,16 +19,15 @@ source ~/.zpm/zpm.zsh 2>/dev/null || {
 # zpm if vte load zpm-zsh/vte
 
 ### 3party plugins
-zpm load                      \
-  zpm-zsh/core-config         \
-  zpm-zsh/ignored-users,async \
-  zpm-zsh/check-deps,async    \
-  zpm-zsh/minimal-theme       \
-  zpm-zsh/ls,async            \
-  zpm-zsh/colorize,async      \
-  zpm-zsh/ssh,async           \
-  zpm-zsh/dot,async           \
-  zpm-zsh/undollar,async
+zpm load zpm-zsh/core-config         
+zpm load zpm-zsh/ignored-users,async 
+zpm load zpm-zsh/check-deps,async    
+zpm load zpm-zsh/minimal-theme       
+zpm load zpm-zsh/ls,async            
+zpm load zpm-zsh/colorize,async      
+zpm load zpm-zsh/ssh,async           
+zpm load zpm-zsh/dot,async           
+zpm load zpm-zsh/undollar,async
 
 ### Plugins for local host
 zpm if-not ssh load                          \
